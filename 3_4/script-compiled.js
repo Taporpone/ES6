@@ -7,23 +7,23 @@ var three = one + ' ' + two;
 
 //2
 var multiply = function multiply(first) {
-    var second = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-    return first * second;
+  var second = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  return first * second;
 };
 
 //3
 var average = function average() {
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-    }
+  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
 
-    return args.reduce(function (a, b) {
-        return a + b;
-    }) / args.length;
+  return args.reduce(function (a, b) {
+    return a + b;
+  }) / args.length;
 };
 
 //4
-var grades = [5, 5, 5, 4, 3, 3, 2, 1];
+var grades = [1, 5, 5, 5, 4, 3, 3, 2, 1];
 console.log(average.apply(undefined, grades));
 
 //5

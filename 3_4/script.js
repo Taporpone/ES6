@@ -7,9 +7,7 @@ const three = `${one} ${two}`;
 const multiply = (first,second=1) => (first*second);
 
 //3
-const average = (...args) => {
-    return args.reduce((a,b) => a+b)/args.length;
-};
+const average = (...args) => args.reduce((a,b) => a+b)/args.length;
 
 //4
 const grades = [1,5, 5, 5, 4, 3, 3, 2, 1];
