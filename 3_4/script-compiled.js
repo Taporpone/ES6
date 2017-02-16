@@ -17,20 +17,16 @@ var average = function average() {
         args[_key] = arguments[_key];
     }
 
-    var avgSum = 0;
-    args.forEach(function (arg) {
-        return avgSum += arg;
-    });
-    return avgSum / args.length;
+    return args.reduce(function (a, b) {
+        return a + b;
+    }) / args.length;
 };
 
 //4
-var grades = [1, 5, 5, 5, 4, 3, 3, 2, 1];
+var grades = [5, 5, 5, 4, 3, 3, 2, 1];
 console.log(average.apply(undefined, grades));
 
 //5
 var data = [1, 4, 'Iwona', false, 'Nowak'];
 var firstName = data[2],
     lastName = data[4];
-
-console.log(firstName, lastName);
