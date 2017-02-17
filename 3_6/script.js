@@ -59,6 +59,23 @@ class Stopwatch {
     this.running = false;
     clearInterval(this.watch);
   }
+
+  restart(){
+    if(this.running){
+      this.stop();
+      this.reset();
+    }else{
+      this.reset();
+    }
+  }
+
+  addToList(){
+    return;
+  }
+
+  clearList(){
+    return;
+  }
 }
 
 const stopwatch = new Stopwatch(document.querySelector('.stopwatch'));
@@ -67,3 +84,9 @@ var startButton = document.getElementById('start');
 startButton.addEventListener('click',stopwatch.start);
 var stopButton = document.getElementById('stop');
 stopButton.addEventListener('click',stopwatch.stop);
+var resetButton = document.getElementsById('restart');
+resetButton.addEventListener('click',stopwatch.restart);
+var addButton = document.getElementsById('addToList');
+addButton.addEventListener('click',stopwatch.addToList);
+var clearList = document.getElementById('clearList');
+clearList.addEventListener('click',stopwatch.clearList);
