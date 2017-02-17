@@ -1,6 +1,13 @@
 'use strict';
 
-var a = function a() {
-  return console.log('a');
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
+var req = new XMLHttpRequest();
+req.open('GET', 'http://www.wp.pl');
+req.onload = function () {
+  return console.log('Loaded');
 };
-a();
+req.onerror = function () {
+  return console.log('error');
+};
+req.send();
