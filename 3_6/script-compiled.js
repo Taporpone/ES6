@@ -20,6 +20,7 @@ var Stopwatch = function () {
     this.display = display;
     this.reset();
     this.print(this.times);
+    this.list = this.display.querySelector('ul').innerHTML;
   }
 
   _createClass(Stopwatch, [{
@@ -34,7 +35,7 @@ var Stopwatch = function () {
   }, {
     key: 'print',
     value: function print() {
-      this.display.innerText = this.format(this.times);
+      this.display.querySelector('p').innerText = this.format(this.times);
     }
   }, {
     key: 'format',
@@ -91,19 +92,19 @@ var Stopwatch = function () {
   }, {
     key: 'addToList',
     value: function addToList() {
-      this.display.innerText += '\n ' + this.format(this.times);
+      this.list += '<li>' + this.format(this.times) + '</li>';
+    }
+  }, {
+    key: 'clearList',
+    value: function clearList() {
+      this.list = '';
     }
   }]);
 
   return Stopwatch;
 }();
-//
-//   clearList(){
-//     console.log('');
-//   }
-// }
 
-var stopwatch = new Stopwatch(document.querySelector('.stopwatch'));
+var stopwatch = new Stopwatch(document.getElementById('stopwatch'));
 
 var startButton = document.getElementById('start');
 startButton.addEventListener('click', stopwatch.start.bind(stopwatch));

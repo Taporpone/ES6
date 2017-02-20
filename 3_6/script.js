@@ -13,7 +13,6 @@ class Stopwatch {
     this.reset();
     this.print(this.times);
   }
-
   reset(){
     this.times = {
       minutes: 0,
@@ -21,28 +20,23 @@ class Stopwatch {
       miliseconds: 0
     };
   }
-
   print(){
-    this.display.innerText = this.format(this.times);
+    this.display.querySelector('p').innerText = this.format(this.times);
   }
-
   format(times){
     return `${pad0(times.minutes)}:${pad0(times.seconds)}:${pad0(times.miliseconds)}`;
   }
-
   start() {
     if (!this.running) {
       this.running = true;
       this.watch = setInterval(() => this.step(), 10);
     }
   }
-
   step() {
     if (!this.running) return;
     this.calculate();
     this.print();
   }
-
   calculate() {
     this.times.miliseconds += 1;
     if (this.times.miliseconds >= 100){
@@ -54,32 +48,26 @@ class Stopwatch {
       this.time.seconds = 0;
     }
   }
-
   stop() {
     this.running = false;
     clearInterval(this.watch);
   }
-
   restart(){
     if(this.running){
       this.stop();
     }
-      this.reset();
-      this.print();
-    }
-
-
+    this.reset();
+    this.print();
+  }
   addToList(){
-     this.display.innerText += `\n ${this.format(this.times)}`;
-   }
+    this.display.querySelector('ul').innerHTML += `<li>${this.format(this.times)}</li>`;
+  }
+  clearList(){
+    this.display.querySelector('ul').innerHTML = '';
+  }
 }
-//
-//   clearList(){
-//     console.log('');
-//   }
-// }
 
-const stopwatch = new Stopwatch(document.querySelector('.stopwatch'));
+const stopwatch = new Stopwatch(document.getElementById('stopwatch'));
 
 var startButton = document.getElementById('start');
 startButton.addEventListener('click',stopwatch.start.bind(stopwatch));
