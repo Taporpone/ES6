@@ -79,14 +79,39 @@ var Stopwatch = function () {
       this.running = false;
       clearInterval(this.watch);
     }
+  }, {
+    key: 'restart',
+    value: function restart() {
+      if (this.running) {
+        this.stop();
+      }
+      this.reset();
+      this.print();
+    }
+  }, {
+    key: 'addToList',
+    value: function addToList() {
+      this.display.innerText += '\n ' + this.format(this.times);
+    }
   }]);
 
   return Stopwatch;
 }();
+//
+//   clearList(){
+//     console.log('');
+//   }
+// }
 
 var stopwatch = new Stopwatch(document.querySelector('.stopwatch'));
 
 var startButton = document.getElementById('start');
-startButton.addEventListener('click', stopwatch.start);
+startButton.addEventListener('click', stopwatch.start.bind(stopwatch));
 var stopButton = document.getElementById('stop');
-stopButton.addEventListener('click', stopwatch.stop);
+stopButton.addEventListener('click', stopwatch.stop.bind(stopwatch));
+var resetButton = document.getElementById('restart');
+resetButton.addEventListener('click', stopwatch.restart.bind(stopwatch));
+var addButton = document.getElementById('addToList');
+addButton.addEventListener('click', stopwatch.addToList.bind(stopwatch));
+var clearList = document.getElementById('clearList');
+clearList.addEventListener('click', stopwatch.clearList.bind(stopwatch));
