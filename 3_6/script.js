@@ -63,30 +63,31 @@ class Stopwatch {
   restart(){
     if(this.running){
       this.stop();
-      this.reset();
-    }else{
-      this.reset();
     }
-  }
+      this.reset();
+      this.print();
+    }
+
 
   addToList(){
-    return;
-  }
-
-  clearList(){
-    return;
-  }
+     this.display.innerText += `\n ${this.format(this.times)}`;
+   }
 }
+//
+//   clearList(){
+//     console.log('');
+//   }
+// }
 
 const stopwatch = new Stopwatch(document.querySelector('.stopwatch'));
 
 var startButton = document.getElementById('start');
-startButton.addEventListener('click',stopwatch.start);
+startButton.addEventListener('click',stopwatch.start.bind(stopwatch));
 var stopButton = document.getElementById('stop');
-stopButton.addEventListener('click',stopwatch.stop);
-var resetButton = document.getElementsById('restart');
-resetButton.addEventListener('click',stopwatch.restart);
-var addButton = document.getElementsById('addToList');
-addButton.addEventListener('click',stopwatch.addToList);
+stopButton.addEventListener('click',stopwatch.stop.bind(stopwatch));
+var resetButton = document.getElementById('restart');
+resetButton.addEventListener('click',stopwatch.restart.bind(stopwatch));
+var addButton = document.getElementById('addToList');
+addButton.addEventListener('click', stopwatch.addToList.bind(stopwatch));
 var clearList = document.getElementById('clearList');
-clearList.addEventListener('click',stopwatch.clearList);
+clearList.addEventListener('click',stopwatch.clearList.bind(stopwatch));
