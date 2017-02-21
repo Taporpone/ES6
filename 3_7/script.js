@@ -64,7 +64,6 @@ class Stopwatch extends React.Component {
   clearList(){
     this.setState({times: []});
   }
-
   render (){
     return (
       <div className={'stopwatch'}>
