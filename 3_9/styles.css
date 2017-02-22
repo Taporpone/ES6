@@ -1,0 +1,33 @@
+body {
+  background-color: #F0F2F4;
+}
+
+form {
+  text-align: center;
+  border: 0px solid;
+  padding: 20px 0 20px 0;
+  background-color: #778899;
+  color: white;
+  font-family: 'Sansita', sans-serif;
+  font-size: 25px;
+}
+
+input{
+  margin-left: 10px;
+  color:#D347A1;
+  height: 25px;
+  font-size: 20px;
+  font-family: 'Sansita', sans-serif;
+}
+
+.userBox {
+  display: inline-block;
+  margin:10px 10px 10px 10px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Sansita', sans-serif;
+  color:#424D57;
+}
