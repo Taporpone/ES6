@@ -53,9 +53,6 @@ class Stopwatch extends React.Component {
     clearInterval(this.watch);
   }
   restart(){
-    if(this.state.running){
-      this.stop();
-    }
     this.reset();
   }
   addToList(){

@@ -88,9 +88,6 @@ var Stopwatch = function (_React$Component) {
   }, {
     key: 'restart',
     value: function restart() {
-      if (this.state.running) {
-        this.stop();
-      }
       this.reset();
     }
   }, {
