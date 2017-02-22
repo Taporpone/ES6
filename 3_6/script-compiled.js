@@ -20,7 +20,6 @@ var Stopwatch = function () {
     this.display = display;
     this.reset();
     this.print(this.times);
-    this.list = this.display.querySelector('ul').innerHTML;
   }
 
   _createClass(Stopwatch, [{
@@ -92,12 +91,12 @@ var Stopwatch = function () {
   }, {
     key: 'addToList',
     value: function addToList() {
-      this.list += '<li>' + this.format(this.times) + '</li>';
+      this.display.querySelector('ul').innerHTML += '<li>' + this.format(this.times) + '</li>';
     }
   }, {
     key: 'clearList',
     value: function clearList() {
-      this.list = '';
+      this.display.querySelector('ul').innerHTML = '';
     }
   }]);
 
