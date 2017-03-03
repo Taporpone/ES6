@@ -1,16 +1,27 @@
 {
-  "name": "3_5",
+  "name": "gif_search",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Gif search engine",
+  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel script.js --out-file script-compiled.js"
+    "start": "http-server"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Taporpone/Node/tree/master/2_8"
+  },
+  "keywords": [
+    "gif",
+    "node",
+    "react",
+    "jsx",
+    "js"
+  ],
+  "author": "Taporpone",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-preset-latest": "^6.22.0"
+    "http-server": "^0.9.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
